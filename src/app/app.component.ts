@@ -36,7 +36,7 @@ export class AppComponent {
     this.database.push(book);
   }
 
-  deleteBook(index): void{
+  deleteBook(index: number): void{
     this.database.splice(index, 1);
   }
 
@@ -51,13 +51,14 @@ export class AppComponent {
   }
 
   deleteHardCover(): void{
-    let index:number = 0;
+    let index: number = 0;
     while(this.countHardCover() > 0){
       if(this.isHardCover(index)){
         this.deleteBook(index);
-        continue;
       }
-      index++;
+      else{
+        index++;
+      }
     }
   }
 
